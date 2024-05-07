@@ -1,0 +1,194 @@
+@font-face {
+  font-family: 'nagayama kai';
+  src: url(fonts/nagayama_kai08-webfont.woff2),
+       url(fonts/nagayama_kai08-webfont.woff);
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter'), url(fonts/inter-variablefont_slntwght-webfont.woff2),
+       url(fonts/inter-variablefont_slntwght-webfont.woff);
+}
+
+/*
+  Josh Comeau's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: 'Inter', Arial, Helvetica, sans-serif
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* end of Josh Comeau's Custom CSS Reset  */
+
+/* Poster area */
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.poster-container {
+  color: #ffffff;
+  width: 35%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.poster-pic {
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+
+.logo-container {
+  height: 100px;
+  width: 100%;
+  background-color: rgb(37, 39, 43, 70%);
+  position: absolute;
+  top: 128px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container img {
+  height: 100%;
+}
+
+.logo-container p {
+  font: 3rem 'nagayama kai';
+}
+
+.poster-container > p {
+  position: absolute;
+  bottom: .8rem;
+  font-size: .8rem;
+}
+
+.poster-container > p a {
+  color: inherit;
+}
+
+/* Sign-up area */
+
+em {
+  margin-right: .2rem;
+}
+
+.sign-up-container h2 {
+  font-size: 1.2rem;
+}
+
+.sign-up-container h2:not(:last-child) {
+  margin-bottom: 18px;
+}
+
+.sign-up-container {
+  width: 65%;
+  background-color: #f9fafb;
+}
+
+.sign-up-text-container {
+  height: 33%;
+  padding: 7vh 15vw 5vh 3vw;
+}
+
+.sign-up-form-container {
+  width: 100%;
+  padding: 0 15vw 0 3vw;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 5px 1px #dcddde;
+  vertical-align: middle;
+}
+
+.form-header-container {
+  padding: 2.5vh 0;
+  display: flex;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  gap: 5vw;
+  padding-bottom: 2.5vh;
+}
+
+form div:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+label {
+  text-transform: uppercase;
+  display: block;
+  font-size: .9rem;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid #afafaf;
+}
+
+input:invalid {
+  border: 1px solid #c23838;
+}
+
+input:focus {
+  border: 1px solid #1d4ed8;
+  box-shadow: 2px 2px 5px 2px #dcddde;
+  outline: none;
+}
+
+/* Bottom area */
+
+.sign-up-btn-container {
+  padding: 4vh 15vw 0 40px;
+}
+
+button {
+  background-color: #4b6b6d;
+  color: #ffffff;
+  padding: 10px 50px;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3f5d5e;
+}
+.sign-up-btn-container p {
+  margin-top: 2vh;
+}
+
+.sign-up-btn-container a {
+  color: #4b6b6d;
+  text-decoration: none;
+  font-weight: 800;
+}
