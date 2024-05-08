@@ -42,8 +42,6 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-/* end of Josh Comeau's Custom CSS Reset  */
-
 /* Poster area */
 
 .container {
@@ -96,6 +94,10 @@ p, h1, h2, h3, h4, h5, h6 {
   color: inherit;
 }
 
+.poster-container > p a:hover {
+  color: #c9c9c9;
+}
+
 /* Sign-up area */
 
 em {
@@ -107,7 +109,7 @@ em {
 }
 
 .sign-up-container h2:not(:last-child) {
-  margin-bottom: 18px;
+  margin-bottom: 1.2rem;
 }
 
 .sign-up-container {
