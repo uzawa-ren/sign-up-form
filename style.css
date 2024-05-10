@@ -1,12 +1,13 @@
 :root {
   --white: #ffffff;
+  --light-gray: #c9c9c9;
+  --dark-gray: #6c6c6c;
   --gray: #afafaf;
   --bg-color: #f9fafb;
   --accent-color: #4b6b6d;
   --btn-hover-color: #3f5d5e;
   --invalid-input-color: #c23838;
   --focus-input-color: #1d4ed8;
-  --link-hover-gray: #c9c9c9;
   --shadow-color: #dcddde;
 }
 
@@ -70,6 +71,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: auto;
+  padding: 2vh 0;
 }
 
 .sidebar {
@@ -116,7 +119,7 @@ body {
 }
 
 .sidebar > p a:hover {
-  color: var(--link-hover-gray);
+  color: var(--light-gray);
 }
 
 /* Description area */
@@ -143,10 +146,9 @@ em {
 
 .form-wrapper {
   width: 100%;
-  padding: 0 15vw 0 3vw;
+  padding: 0 15vw 2.5vh 3vw;
   background-color: var(--white);
   box-shadow: 0px 2px 5px 1px var(--shadow-color);
-  padding-bottom: 5vh;
 }
 
 .form-header-wrapper {
@@ -172,7 +174,8 @@ form .form-row:not(:last-child) {
 label {
   text-transform: uppercase;
   display: block;
-  font-size: .9rem;
+  font-size: .8rem;
+  letter-spacing: .1rem;
 }
 
 input {
@@ -180,7 +183,7 @@ input {
   border: 1px solid var(--gray);
 }
 
-input:invalid {
+input:invalid:not(:placeholder-shown) {
   border: 1px solid var(--invalid-input-color);
 }
 
@@ -188,6 +191,10 @@ input:focus {
   border: 1px solid var(--focus-input-color);
   box-shadow: 2px 2px 5px 2px var(--shadow-color);
   outline: none;
+}
+
+form p {
+  color: #998d5f;
 }
 
 /* Bottom area */
@@ -206,7 +213,7 @@ button {
 }
 
 button:hover {
-  background-color: var(--btn-hover-bg-color);
+  background-color: var(--btn-hover-color);
 }
 .btn-wrapper p {
   margin-top: 4vh;

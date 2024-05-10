@@ -34,35 +34,36 @@
         <div class="form-row">
           <div>
             <label for="first-name">First name *</label>
-            <input type="text" name="first_name" id="first-name" required>
+            <input type="text" name="first_name" id="first-name" placeholder=" " required>
           </div>
           <div>
             <label for="last-name">Last name</label>
-            <input type="text" name="last_name" id="last-name">
+            <input type="text" name="last_name" id="last-name" placeholder=" ">
           </div>
         </div>
         <div class="form-row">
           <div>
             <label for="email">Email *</label>
-            <input type="email" name="email" id="email" required>
+            <input type="email" name="email" id="email" placeholder=" " required>
           </div>
           <div>
             <label for="phone">Phone number</label>
-            <input type="tel" name="phone" id="phone">
+            <input type="tel" name="phone" id="phone" placeholder=" " maxlength="10" pattern="\d{10}">
           </div>
         </div>
         <div class="form-row">
           <div>
             <label for="password">Password *</label>
-            <input type="password" name="password" id="password"
+            <input type="password" name="password" id="password" placeholder=" "
             pattern="^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$"
             title="Password must contain at least one special character, one uppercase letter, one lowercase letter, one digit, and be at least 8 characters long." required>
           </div>
           <div>
             <label for="password-confirm">Confirm password *</label>
-            <input type="password" name="password_confirm" id="password-confirm" pattern="^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$" required>
+            <input type="password" name="password_confirm" placeholder=" " id="password-confirm" pattern="^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$" required>
           </div>
         </div>
+        <p>Password must contain at least one special character, one uppercase letter, one lowercase letter, one digit, and be at least 8 characters long.</p>
       </form>
     </div>
     <div class="btn-wrapper">
