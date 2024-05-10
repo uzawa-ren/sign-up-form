@@ -1,3 +1,7 @@
+# Preview
+
+![preview](./images/preview.png)
+
 # Credits
 
 The font used in the logo is by Nagayama Sensei on [bokushin.org](https://www.bokushin.org/en).
