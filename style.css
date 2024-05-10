@@ -1,13 +1,27 @@
+:root {
+  --white: #ffffff;
+  --gray: #afafaf;
+  --bg-color: #f9fafb;
+  --accent-color: #4b6b6d;
+  --btn-hover-color: #3f5d5e;
+  --invalid-input-color: #c23838;
+  --focus-input-color: #1d4ed8;
+  --link-hover-gray: #c9c9c9;
+  --shadow-color: #dcddde;
+}
+
 @font-face {
   font-family: 'nagayama kai';
-  src: url(fonts/nagayama_kai08-webfont.woff2),
-       url(fonts/nagayama_kai08-webfont.woff);
+  src: url(./fonts/nagayama_kai08-webfont.woff2) format("woff2"),
+       url(./fonts/nagayama_kai08-webfont.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'Inter';
-  src: local('Inter'), url(fonts/inter-variablefont_slntwght-webfont.woff2),
-       url(fonts/inter-variablefont_slntwght-webfont.woff);
+  src: local('Inter'), url(./fonts/inter-variablefont_slntwght-webfont.woff2) format("woff2"),
+       url(./fonts/inter-variablefont_slntwght-webfont.woff) format("woff");
 }
 
 /*
@@ -42,95 +56,100 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-/* Poster area */
+/* Layout */
 
-.container {
+body {
   display: flex;
   height: 100vh;
   width: 100vw;
 }
 
-.poster-container {
-  color: #ffffff;
+.main {
+  width: 65%;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sidebar {
+  color: var(--white);
   width: 35%;
   position: relative;
   display: flex;
   justify-content: center;
+  background-image: url(./images/cafe-background.jpg);
+  background-size: cover;
+  background-position: left;
 }
 
-.poster-pic {
-  height: 100%;
-  object-fit: cover;
-  object-position: left;
-}
+/* Sidebar area */
 
-.logo-container {
+.logo {
   height: 100px;
   width: 100%;
   background-color: rgb(37, 39, 43, 70%);
   position: absolute;
-  top: 128px;
+  top: 20vh;
   padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.logo-container img {
+.logo img {
   height: 100%;
 }
 
-.logo-container p {
+.logo h1 {
   font: 3rem 'nagayama kai';
 }
 
-.poster-container > p {
+.sidebar > p {
   position: absolute;
   bottom: .8rem;
   font-size: .8rem;
 }
 
-.poster-container > p a {
+.sidebar > p a {
   color: inherit;
 }
 
-.poster-container > p a:hover {
-  color: #c9c9c9;
+.sidebar > p a:hover {
+  color: var(--link-hover-gray);
 }
 
-/* Sign-up area */
+/* Description area */
 
 em {
   margin-right: .2rem;
 }
 
-.sign-up-container h2 {
+.description-wrapper p,
+.form-header-wrapper h2 {
   font-size: 1.2rem;
+  font-weight: bold;
 }
 
-.sign-up-container h2:not(:last-child) {
+.description-wrapper p:not(:last-child) {
   margin-bottom: 1.2rem;
 }
 
-.sign-up-container {
-  width: 65%;
-  background-color: #f9fafb;
+.description-wrapper {
+  padding: 0 15vw 5vh 3vw;
 }
 
-.sign-up-text-container {
-  height: 33%;
-  padding: 7vh 15vw 5vh 3vw;
-}
+/* Form area */
 
-.sign-up-form-container {
+.form-wrapper {
   width: 100%;
   padding: 0 15vw 0 3vw;
-  background-color: #ffffff;
-  box-shadow: 0px 2px 5px 1px #dcddde;
-  vertical-align: middle;
+  background-color: var(--white);
+  box-shadow: 0px 2px 5px 1px var(--shadow-color);
+  padding-bottom: 5vh;
 }
 
-.form-header-container {
+.form-header-wrapper {
   padding: 2.5vh 0;
   display: flex;
   align-items: center;
@@ -138,11 +157,15 @@ em {
 
 form {
   display: flex;
-  gap: 5vw;
-  padding-bottom: 2.5vh;
+  flex-direction: column;
 }
 
-form div:not(:last-child) {
+.form-row {
+  display: flex;
+  gap: 5vw;
+}
+
+form .form-row:not(:last-child) {
   margin-bottom: 15px;
 }
 
@@ -154,28 +177,28 @@ label {
 
 input {
   border-radius: 5px;
-  border: 1px solid #afafaf;
+  border: 1px solid var(--gray);
 }
 
 input:invalid {
-  border: 1px solid #c23838;
+  border: 1px solid var(--invalid-input-color);
 }
 
 input:focus {
-  border: 1px solid #1d4ed8;
-  box-shadow: 2px 2px 5px 2px #dcddde;
+  border: 1px solid var(--focus-input-color);
+  box-shadow: 2px 2px 5px 2px var(--shadow-color);
   outline: none;
 }
 
 /* Bottom area */
 
-.sign-up-btn-container {
+.btn-wrapper {
   padding: 4vh 15vw 0 40px;
 }
 
 button {
-  background-color: #4b6b6d;
-  color: #ffffff;
+  background-color: var(--accent-color);
+  color: var(--white);
   padding: 10px 50px;
   border-radius: 8px;
   border: 0;
@@ -183,14 +206,18 @@ button {
 }
 
 button:hover {
-  background-color: #3f5d5e;
+  background-color: var(--btn-hover-bg-color);
 }
-.sign-up-btn-container p {
-  margin-top: 2vh;
+.btn-wrapper p {
+  margin-top: 4vh;
 }
 
-.sign-up-btn-container a {
-  color: #4b6b6d;
+.btn-wrapper a {
+  color: var(--accent-color);
   text-decoration: none;
   font-weight: 800;
+}
+
+.btn-wrapper a:hover {
+  text-decoration: underline;
 }
